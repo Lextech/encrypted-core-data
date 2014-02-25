@@ -297,10 +297,11 @@ static NSString * const EncryptedStoreMetadataTableName = @"meta";
                                                error:(NSError **)error {
     
     // cache hit
-    {
-        NSIncrementalStoreNode *node = [nodeCache objectForKey:objectID];
-        if (node) { return node; }
-    }
+    // cache doesnt seem to return all the values on a object. This is problematic, removing cache for now
+    //{
+    //    NSIncrementalStoreNode *node = [nodeCache objectForKey:objectID];
+    //    if (node) { return node; }
+    //}
     
     // prepare values
     NSEntityDescription *entity = [objectID entity];
